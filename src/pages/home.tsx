@@ -47,16 +47,17 @@ export default function CallToActionWithVideo() {
                                     bg: 'red.400',
                                     zIndex: -1,
                                 }}>
-                                Welcome to my project,
+                               Welcome to my website.
                             </Text>
                             <br/>
                             <Text as={'span'} color={'red.400'}>
-                                üK 294
+                                My name is Regthihan.
                             </Text>
                         </Heading>
                         <Text color={'gray.500'}>
-                            Implements, using given technology and an existing back-end, a front-end of an interactive
-                            web application that enables the management of data. </Text>
+                        I'm motivated learner with openness to culture. I started developing when i was little and now i do it for living. I work since 1 year and 9 month for a company as an 
+                        software developer apprentice.
+ </Text>
 
                     </Stack>
                     <Flex
