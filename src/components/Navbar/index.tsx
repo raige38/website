@@ -260,33 +260,16 @@ const NAV_ITEMS: Array<NavItem> = [
         label: 'Home',
         href: '/',
     },
-    /**
-     * 
-     *  {
+    {
         label: 'Apps',
         children: [
             {
-                label: 'Create Form',
-                subLabel: 'Create form',
-                href: '/create',
-            },
-            {
                 label: 'Daily dose of facts',
                 subLabel: 'Get some facts about cats for your daily dose',
-                href: '/cat-fact',
+                href: '/cat-facts',
             },
-            {
-                label: 'Source code',
-                subLabel: 'Get the code of my website',
-                href: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-            },
-            {
-                label: 'Terms of use',
-                subLabel: 'Get more information',
-                href: 'https://www.termsofusegenerator.net/live.php?token=35fyDI4570qCgvHURnHQWuo4Khkf8kQ5',
-            },
+           
         ],
     },
-     * 
-     */ 
+   
 ];
