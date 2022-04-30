@@ -82,15 +82,12 @@ const CatFact: React.FC = (): ReactElement => {
                         <Thead>
                             <Tr>
                                 <Th>Fact</Th>
-                                <Th isNumeric>Length</Th>
                             </Tr>
                         </Thead>
                         <Tbody>
                             {Array.isArray(facts) ? facts.map((fact) => (
                                 <Tr>
                                     <Td>{fact.fact}</Td>
-                                    <Th isNumeric>{fact.fact.length}</Th>
-
                                 </Tr>
                             )) : (
                                 "No facts found"
