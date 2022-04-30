@@ -14,6 +14,7 @@ import {
     Button
 } from "@chakra-ui/react";
 import axios from "axios";
+import { SpinnerIcon } from '@chakra-ui/icons'
 
 
 // Interface for the cat facts
@@ -92,12 +93,13 @@ const CatFact: React.FC = (): ReactElement => {
 
                                 </Tr>
                             )) : (
-                                "No news found"
+                                "No facts found"
                             )}
                         </Tbody>
                     </Table>
                 </Box>
                 <Button
+                    leftIcon={<SpinnerIcon/>}
                     colorScheme="red"
                     bgGradient="linear(to-r, red.400, red.500, red.600)"
                     color="white"
