@@ -13,8 +13,6 @@ import {
 import React from "react";
 
 
-
-
 export default function CallToActionWithVideo() {
     return (
         <div style={{
