@@ -55,7 +55,7 @@ export default function SmallWithSocial() {
                 spacing={4}
                 justify={{ base: 'center', md: 'space-between' }}
                 align={{ base: 'center', md: 'center' }}>
-                <Text>Copyright © 2022 - Developed by Regthihan Jeyasanthan v1</Text>
+                <Text>Copyright © 2022 - Developed by raige v1.4</Text>
                 <Stack direction={'row'} spacing={6}>
                     <SocialButton label={'LinkedIn'} href={'https://www.linkedin.com/in/regthihan-jeyasanthan-57a048209/'}>
                         <FaLinkedin />
