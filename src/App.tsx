@@ -19,7 +19,7 @@ function App() {
             <Routes>
                 <Route path='/' element={<Home/>}/>
                 <Route path='/cat-facts' element={<CatFact/>}/>
-                <Route path='/portfolio' element={<CatFact/>}/>
+                <Route path='/portfolio' element={<Portfolio/>}/>
 
                 
                 <Route path='*' element={<Error/>}/>
