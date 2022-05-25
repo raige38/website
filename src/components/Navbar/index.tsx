@@ -21,6 +21,8 @@ import {
 } from '@chakra-ui/icons';
 import logoBlack from './logoblack.png';
 import logoWhite from './logowhite.png';
+import {Link as RouterLink} from 'react-router-dom';
+
 
 /**
  * Navigation bar for Desktop and mobile using chakra
@@ -95,7 +97,9 @@ const DesktopNav = () => {
                         <PopoverTrigger>
                             <Link
                                 p={2}
-                                href={navItem.href ?? '#'}
+                                as={RouterLink}
+                                to={navItem.href ?? '#'}
+
                                 fontSize={'sm'}
                                 fontWeight={500}
                                 color={linkColor}
@@ -141,6 +145,8 @@ const DesktopSubNav = ({label, href, subLabel}: NavItem) => {
         <Link
             href={href}
             role={'group'}
+            as={RouterLink}
+            to={href ?? '#'}
             display={'block'}
             p={2}
             rounded={'md'}
@@ -202,8 +208,9 @@ const MobileNavItem = ({label, children, href}: NavItem) => {
         <Stack spacing={4} onClick={children && onToggle}>
             <Flex
                 py={2}
-                as={Link}
-                href={href ?? '#'}
+                as={RouterLink} 
+                to={href ?? '#'}
+
                 justify={'space-between'}
                 align={'center'}
                 _hover={{
@@ -235,7 +242,8 @@ const MobileNavItem = ({label, children, href}: NavItem) => {
                     align={'start'}>
                     {children &&
                         children.map((child) => (
-                            <Link key={child.label} py={2} href={child.href}>
+                            <Link key={child.label} py={2}           
+                             as={RouterLink} to={child.href ?? '#'}>
                                 {child.label}
                             </Link>
                         ))}
@@ -270,6 +278,10 @@ const NAV_ITEMS: Array<NavItem> = [
             },
            
         ],
+    },
+    {
+        label: 'Portfolio',
+        href: '/portfolio',
     },
    
 ];

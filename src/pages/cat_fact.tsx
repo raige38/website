@@ -20,7 +20,6 @@ import { SpinnerIcon } from '@chakra-ui/icons'
 // Interface for the cat facts
 interface IFact {
     fact: string;
-    length: string;
 }
 
 /**
@@ -30,31 +29,28 @@ interface IFact {
  */
 const CatFact: React.FC = (): ReactElement => {
     const COUNTRY_URL = 'https://catfact.ninja/facts'
-    const [facts, setFacts] = useState<IFact[]>([{fact: 'Hallo', length: '5'}]);
+    const [facts, setFacts] = useState<IFact[]| null>(null);
 
     /**
      * Uses this function when this page gets loaded
      */
     useEffect(() => {
         getFacts();
-        console.log(facts);
     }, []);
 
     /**
      * gets facts about cats over the api and saves it in a react hook.
      */
     const getFacts = () => {
-        let infos: IFact[] = [];
         axios.get(COUNTRY_URL).then((res: any) => {
+            let obs: IFact[] = [];
             for (let item of res.data.data) {
-                let factItem = {
-                    fact: item.fact,
-                    length: item.length
-                };
-                console.log(facts)
-                infos.push(factItem);
+                obs.push(item.fact)
             }
-            setFacts(infos);
+            setFacts(obs);
+        }).catch((err)=>{
+            console.error(err);
+            
         })
     }
 
@@ -85,9 +81,9 @@ const CatFact: React.FC = (): ReactElement => {
                             </Tr>
                         </Thead>
                         <Tbody>
-                            {Array.isArray(facts) ? facts.map((fact) => (
+                            {Array.isArray(facts) ? facts.map((fact,index) => (
                                 <Tr>
-                                    <Td>{fact.fact}</Td>
+                                    <Td key={index}>{fact}</Td>
                                 </Tr>
                             )) : (
                                 "No facts found"
@@ -95,19 +91,8 @@ const CatFact: React.FC = (): ReactElement => {
                         </Tbody>
                     </Table>
                 </Box>
-                <Button
-                    leftIcon={<SpinnerIcon/>}
-                    colorScheme="red"
-                    bgGradient="linear(to-r, red.400, red.500, red.600)"
-                    color="white"
-                    onClick={() => window.location.reload()}
-                    variant="solid">
-                    Get new cat facts
-                 </Button>
             </Stack>
         </Flex>
-
-
     )
 }
 
