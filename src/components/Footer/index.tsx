@@ -44,30 +44,40 @@ const SocialButton = ({
 
 export default function SmallWithSocial() {
     return (
-        <Box
-            bg={useColorModeValue('gray.50', 'gray.900')}
-            color={useColorModeValue('gray.700', 'gray.200')}>
-            <Container
-                as={Stack}
-                maxW={'6xl'}
-                py={4}
-                direction={{ base: 'column', md: 'row' }}
-                spacing={4}
-                justify={{ base: 'center', md: 'space-between' }}
-                align={{ base: 'center', md: 'center' }}>
-                <Text>Copyright © 2022 - Developed by raige v1.4</Text>
-                <Stack direction={'row'} spacing={6}>
-                    <SocialButton label={'LinkedIn'} href={'https://www.linkedin.com/in/regthihan-jeyasanthan-57a048209/'}>
-                        <FaLinkedin />
-                    </SocialButton>
-                    <SocialButton label={'GitLab'} href={'https://gitlab.com/regthihan.jeyasanthan'}>
-                        <FaGitlab />
-                    </SocialButton>
-                    <SocialButton label={'Instagram'} href={'#'}>
-                        <FaCoffee />
-                    </SocialButton>
-                </Stack>
-            </Container>
-        </Box>
+        <div  style={{
+            position: "fixed",
+            left: 0,
+            bottom: 0,
+            right: 0,
+            backgroundColor: "green"
+          }}
+          >
+            <Box
+                bg={useColorModeValue('gray.50', 'gray.900')}
+                color={useColorModeValue('gray.700', 'gray.200')}>
+                <Container
+                    as={Stack}
+                    maxW={'6xl'}
+                    py={4}
+                    direction={{ base: 'column', md: 'row' }}
+                    spacing={4}
+                    justify={{ base: 'center', md: 'space-between' }}
+                    align={{ base: 'center', md: 'center' }}>
+                    <Text>Copyright © 2022 - Developed by raige v1.4</Text>
+                    <Stack direction={'row'} spacing={6}>
+                        <SocialButton label={'LinkedIn'} href={'https://www.linkedin.com/in/regthihan-jeyasanthan-57a048209/'}>
+                            <FaLinkedin />
+                        </SocialButton>
+                        <SocialButton label={'GitLab'} href={'https://gitlab.com/regthihan.jeyasanthan'}>
+                            <FaGitlab />
+                        </SocialButton>
+                        <SocialButton label={'Instagram'} href={'#'}>
+                            <FaCoffee />
+                        </SocialButton>
+                    </Stack>
+                </Container>
+            </Box>
+        </div>
+        
     );
 }

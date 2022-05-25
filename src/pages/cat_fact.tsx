@@ -28,7 +28,7 @@ interface IFact {
  * @constructor
  */
 const CatFact: React.FC = (): ReactElement => {
-    const COUNTRY_URL = 'https://catfact.ninja/facts'
+    const COUNTRY_URL = 'https://catfact.ninja/fact'
     const [facts, setFacts] = useState<IFact[]| null>(null);
 
     /**
@@ -44,9 +44,7 @@ const CatFact: React.FC = (): ReactElement => {
     const getFacts = () => {
         axios.get(COUNTRY_URL).then((res: any) => {
             let obs: IFact[] = [];
-            for (let item of res.data.data) {
-                obs.push(item.fact)
-            }
+            obs.push(res.data.fact)
             setFacts(obs);
         }).catch((err)=>{
             console.error(err);
@@ -91,6 +89,7 @@ const CatFact: React.FC = (): ReactElement => {
                         </Tbody>
                     </Table>
                 </Box>
+                <Button onClick={()=>getFacts()}>Get more</Button>  
             </Stack>
         </Flex>
     )
