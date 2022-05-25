@@ -55,7 +55,7 @@ export default function CallToActionWithVideo() {
                             </Text>
                         </Heading>
                         <Text color={'gray.500'}>
-                        I'm a motivated learner with openness to culture. I started developing when I was little, and now I do it for living. Furthermore, I work since 1 year and 9 months for a company as a software developer apprentice.
+                        I'm a motivated learner with openness to culture. I started developing when I was little, and now I do it for living. Furthermore, I work since 1 year and 10 months for a company as a software developer apprentice.
 
  </Text>
 
