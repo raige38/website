@@ -7,7 +7,7 @@ import {
     useColorModeValue,
     VisuallyHidden,
 } from '@chakra-ui/react';
-import {FaCoffee, FaGitlab, FaLinkedin} from 'react-icons/fa';
+import {FaCoffee, FaGitlab, FaLinkedin,FaGithub} from 'react-icons/fa';
 import { ReactNode } from 'react';
 
 const SocialButton = ({
@@ -26,6 +26,7 @@ const SocialButton = ({
             w={8}
             h={8}
             cursor={'pointer'}
+            target='_blank'
             as={'a'}
             href={href}
             display={'inline-flex'}
@@ -71,9 +72,9 @@ export default function SmallWithSocial() {
                         <SocialButton label={'GitLab'} href={'https://gitlab.com/regthihan.jeyasanthan'}>
                             <FaGitlab />
                         </SocialButton>
-                        <SocialButton label={'Instagram'} href={'#'}>
-                            <FaCoffee />
-                        </SocialButton>
+                        <SocialButton label={'GitHub'} href={'https://github.com/raige38'}  >
+                            <FaGithub />
+                        </SocialButton> 
                     </Stack>
                 </Container>
             </Box>
