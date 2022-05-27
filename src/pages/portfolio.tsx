@@ -1,13 +1,30 @@
-import React from "react";
+import React, {ReactElement, useEffect, useState} from "react";
 import {Flex, Heading, Spacer, useColorMode, VStack, SimpleGrid,Box,Icon,Text, Container,Stack, GridItem,Tag} from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import {IconButton} from "@chakra-ui/button";
-import {FaSun, FaMoon, FaInstagram, FaGithub, FaLinkedin} from "react-icons/fa";
+import {FaSun, FaMoon, FaInstagram, FaGithub, FaLinkedin,FaGamepad, FaRunning, FaWeight, FaDumbbell, FaCode, FaMusic, FaPoop, FaArrowAltCircleLeft, FaBitbucket, FaCookie, FaAngry, FaPlaceOfWorship, FaPlaystation, FaTable, FaUtensils} from "react-icons/fa";
 import {DiPython, DiFirefox, DiGit, DiReact, DiGitBranch, DiGithub, DiJava, DiAndroid, DiScrum} from "react-icons/di";
+import {GiGrandPiano} from "react-icons/gi";
 
 
 
 const Portfolio = () => {
+    const [columnSize,setColumnSize] = useState<number>(3);
+
+
+
+    useEffect(() => {
+        console.log("tes");
+        
+        if (window.innerWidth <= 600){
+            console.log("set");
+            setColumnSize(1);
+        }else{
+            setColumnSize(3);
+        }
+    });
+
+
     return(
         <div>
             <Container maxW={'7xl'}>
@@ -32,59 +49,89 @@ const Portfolio = () => {
                                     bg: 'red.400',
                                     zIndex: -1,
                                 }}>
-                                    Porfolio
+                                    Portfolio
                             </Text>
                         </Heading>
                         <Tabs orientation={'horizontal'} variant={'enclosed'}>
                         <TabList>
-                            <Tab>Story</Tab>
+                            <Tab>About me</Tab>
                             <Tab>Experience</Tab>
                         </TabList>
 
                         <TabPanels>
 
-                            <TabPanel>
+                            <TabPanel>2 a
+                            <SimpleGrid columns={{if window.innerWidth<700 ?3:1}} spacing={10}>
+                                    <Box>
+                                    <Icon p="4" as={FaCode} w="24" h="24"/>
+                                        <Text p="4" fontSize="xl" fontWeight="semibold">
+                                            Since i had my first laptop i have an obsession with coding. 
+                                            
+                                        </Text>
+                                    </Box>
+                                    <Box>
+                                        <Icon p="4" as={FaDumbbell} w="24" h="24"/>
+                                        <Text p="4" fontSize="xl" fontWeight="semibold">
+                                            Because of my job i do a lot of sports in my free time. 
+                                            </Text> 
+                                    </Box>
+                                    <Box>
+                                        <Icon p="4" as={GiGrandPiano} w="20" h="20"/>
+                                        <Text p="4" fontSize="xl" fontWeight="semibold">
+                                            Scrum project management method
+                                        </Text> 
+                                        <Tag bg={'red.400'}>Over one year experience</Tag>
+                                    </Box>
+
+                                    <Box>
+                                        <Icon p="4" as={FaUtensils} w="24" h="24"/>
+                                        <Text p="4" fontSize="m" fontWeight="semibold">
+                                           Next to sport i also love to cook. 
+                                           Making healthy food by your own is the best feeling ever.
+                                        </Text> 
+                                    </Box>
+                                </SimpleGrid>
+                                
                             
                             </TabPanel>
                             <TabPanel>
-                                <SimpleGrid columns={3} spacing={10}>
+                                <SimpleGrid columns={columnSize} spacing={10}>
                                     <Box>
-                                    <Icon color="white" p="4" as={DiPython} w="24" h="24"/>
-                                    <Text color="white" p="4" fontSize="xl" fontWeight="semibold">
-                                        Python Backend development such as Django Rest.
-                                    </Text>
-                                    <Tag bg={'red.400'}>Over one year experience</Tag>
+                                        <Icon p="4" as={DiPython} w="24" h="24"/>
+                                        <Text p="4" fontSize="xl" fontWeight="semibold">
+                                            Python Backend development such as Django Rest.
+                                        </Text>
+                                        <Tag bg={'red.400'}>Over one year experience</Tag>
+                                    </Box>
+                                    <Box>
+                                        <Icon p="4" as={DiReact} w="24" h="24"/>
+                                        <Text p="4" fontSize="xl" fontWeight="semibold">
+                                            React TypeScript Frontend development
+                                        </Text> 
+                                        <Tag bg={'red.400'}>One year experience</Tag>
+                                    </Box>
+                                    <Box>
+                                        <Icon p="4" as={DiScrum} w="24" h="24"/>
+                                        <Text p="4" fontSize="xl" fontWeight="semibold">
+                                            Scrum project management method
+                                        </Text> 
+                                        <Tag bg={'red.400'}>Over one year experience</Tag>
+                                    </Box>
 
-                                    </Box>
                                     <Box>
-                                    <Icon color="white" p="4" as={DiReact} w="24" h="24"/>
-                                    <Text color="white" p="4" fontSize="xl" fontWeight="semibold">
-                                        React TypeScript Frontend development. 
-                                    </Text> 
-                                    <Tag bg={'red.400'}>One year experience</Tag>
+                                        <Icon p="4" as={DiGitBranch} w="24" h="24"/>
+                                        <Text p="4" fontSize="xl" fontWeight="semibold">
+                                           Git versioning on Gitlab and Github
+                                        </Text> 
+                                        <Tag bg={'red.400'}>Over one year experience</Tag>
+                                    </Box>
 
-                                    </Box>
                                     <Box>
-                                    <Icon color="white" p="4" as={DiScrum} w="24" h="24"/>
-                                    <Icon color="white" p="4" as={DiGitBranch} w="24" h="24"/>
-                                    <Text color="white" p="4" fontSize="xl" fontWeight="semibold">
-                                        Scrum + Git workflow.
-                                    </Text> 
-                                    <Tag bg={'red.400'}>Over one year experience</Tag>
-                                    </Box>
-                                    <Box>
-                                    <Icon color="white" p="4" as={DiJava} w="24" h="24"/>
-                                    <Text color="white" p="4" fontSize="xl" fontWeight="semibold">
-                                        Java Object based.
-                                    </Text> 
-                                    <Tag bg={'red.400'}>One year experience.</Tag>
-                                    </Box>
-                                    <Box>
-                                    <Icon color="white" p="4" as={DiScrum} w="24" h="24"/>
-                                    <Text color="white" p="4" fontSize="xl" fontWeight="semibold">
-                                        
-                                    </Text> 
-                                    <Tag bg={'red.400'}>One year experience.</Tag>
+                                        <Icon p="4" as={FaGamepad} w="24" h="24"/>
+                                        <Text p="4" fontSize="xl" fontWeight="semibold">
+                                            Game development using Godot Engine
+                                        </Text> 
+                                        <Tag bg={'red.400'}>Two games developed</Tag>
                                     </Box>
                                 </SimpleGrid>
                             </TabPanel>
