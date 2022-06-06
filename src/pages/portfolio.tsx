@@ -1,14 +1,12 @@
 import React, {ReactElement, useEffect, useState} from "react";
-import {Flex, Heading, Spacer, useColorMode, VStack, SimpleGrid,Box,Icon,Text, Container,Stack, GridItem,Tag} from "@chakra-ui/react";
+import {Heading, SimpleGrid,Box,Icon,Text, Container,Stack,Tag} from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
-import {IconButton} from "@chakra-ui/button";
-import {FaSun, FaMoon, FaInstagram, FaGithub, FaLinkedin,FaGamepad, FaRunning, FaWeight, FaDumbbell, FaCode, FaMusic, FaPoop, FaArrowAltCircleLeft, FaBitbucket, FaCookie, FaAngry, FaPlaceOfWorship, FaPlaystation, FaTable, FaUtensils} from "react-icons/fa";
-import {DiPython, DiFirefox, DiGit, DiReact, DiGitBranch, DiGithub, DiJava, DiAndroid, DiScrum} from "react-icons/di";
-import {GiGrandPiano} from "react-icons/gi";
+import {FaGamepad, FaDumbbell, FaCode, FaUtensils} from "react-icons/fa";
+import {DiPython, DiReact, DiGitBranch, DiScrum} from "react-icons/di";
 
 
 
-const Portfolio = () => {
+const Portfolio: React.FC = (): ReactElement => {
     const [columnSize,setColumnSize] = useState<number>(3);
 
 
@@ -60,8 +58,8 @@ const Portfolio = () => {
 
                         <TabPanels>
 
-                            <TabPanel>2 a
-                            <SimpleGrid columns={{if window.innerWidth<700 ?3:1}} spacing={10}>
+                            <TabPanel>
+                            <SimpleGrid columns={3} spacing={10}>
                                     <Box>
                                     <Icon p="4" as={FaCode} w="24" h="24"/>
                                         <Text p="4" fontSize="xl" fontWeight="semibold">
@@ -75,14 +73,6 @@ const Portfolio = () => {
                                             Because of my job i do a lot of sports in my free time. 
                                             </Text> 
                                     </Box>
-                                    <Box>
-                                        <Icon p="4" as={GiGrandPiano} w="20" h="20"/>
-                                        <Text p="4" fontSize="xl" fontWeight="semibold">
-                                            Scrum project management method
-                                        </Text> 
-                                        <Tag bg={'red.400'}>Over one year experience</Tag>
-                                    </Box>
-
                                     <Box>
                                         <Icon p="4" as={FaUtensils} w="24" h="24"/>
                                         <Text p="4" fontSize="m" fontWeight="semibold">
