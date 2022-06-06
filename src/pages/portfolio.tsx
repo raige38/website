@@ -27,6 +27,7 @@ const Portfolio: React.FC = (): ReactElement => {
         <div>
             <Container maxW={'7xl'}>
                 <Stack
+                    minH={'100vh'}
                     py={{base: 20, md: 28}}
                     direction= {{base: 'column', md: 'row'}}>
                     <Stack flex={1} spacing={{base: 5, md: 10}}>
@@ -59,7 +60,7 @@ const Portfolio: React.FC = (): ReactElement => {
                         <TabPanels>
 
                             <TabPanel>
-                            <SimpleGrid columns={3} spacing={10}>
+                            <SimpleGrid columns={columnSize} spacing={10}>
                                     <Box>
                                     <Icon p="4" as={FaCode} w="24" h="24"/>
                                         <Text p="4" fontSize="xl" fontWeight="semibold">
