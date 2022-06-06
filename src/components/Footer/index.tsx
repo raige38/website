@@ -46,7 +46,7 @@ const SocialButton = ({
 export default function SmallWithSocial() {
     return (
         <div  style={{
-            position: "fixed",
+            position: "absolute",
             left: 0,
             bottom: 0,
             right: 0,

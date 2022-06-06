@@ -27,6 +27,7 @@ const Portfolio: React.FC = (): ReactElement => {
         <div>
             <Container maxW={'7xl'}>
                 <Stack
+                    minH={'100vh'}
                     py={{base: 20, md: 28}}
                     direction= {{base: 'column', md: 'row'}}>
                     <Stack flex={1} spacing={{base: 5, md: 10}}>
