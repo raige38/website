@@ -60,7 +60,7 @@ const Portfolio: React.FC = (): ReactElement => {
                         <TabPanels>
 
                             <TabPanel>
-                            <SimpleGrid columns={3} spacing={10}>
+                            <SimpleGrid columns={columnSize} spacing={10}>
                                     <Box>
                                     <Icon p="4" as={FaCode} w="24" h="24"/>
                                         <Text p="4" fontSize="xl" fontWeight="semibold">
